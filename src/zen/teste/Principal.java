@@ -6,16 +6,23 @@ public class Principal {
 	public static void main(String[] args) {
 		// Classe TESTE
 		Controller ctrl = new Controller();
-
-		ctrl.menu();
 		Scanner sc = new Scanner(System.in);
-		System.out.print("DIGITE A OPÇÃO: ");
-		int op = sc.nextInt();
-		ctrl.execute(op);
+		boolean continuar = true;
 		
-		sc.close();			
-	
-		ctrl.mostrarUsuarios();
-		ctrl.mostrarFormularios();
+		while(continuar) {
+			ctrl.menu();
+			System.out.print("DIGITE A OPÇÃO: ");
+			int op = sc.nextInt();
+			ctrl.execute(op);
+			
+			System.out.println("DESEJA CONTINUAR[S/N]: ");
+			String vai = sc.next();
+			if (vai.toUpperCase().startsWith("N")) {
+				continuar = false;				
+			}
+			
+		}	
+		
+		sc.close();
 	}
 }

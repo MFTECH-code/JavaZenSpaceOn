@@ -20,6 +20,7 @@ public class Controller {
 	private Administrador adm = new Administrador();
 	private Consulta consulta = new Consulta();
 	private Avaliacao avaliacao = new Avaliacao();
+	private Scanner sc = new Scanner(System.in);
 	
 	// Menu
 	public void menu() {
@@ -29,6 +30,8 @@ public class Controller {
 		System.out.println("1 - CADASTRAR USUARIO");
 		System.out.println("2 - CADASTRAR CONSULTA");
 		System.out.println("3 - CADASTRAR AVALIAÇÃO");
+		System.out.println("4 - MOSTRAR USUARUOS");
+		System.out.println("5 - MOSTRAR FORMULARIOS");
 		System.out.println("---------------------------------");
 	}
 	
@@ -75,7 +78,6 @@ public class Controller {
 			System.out.println("1 - ADMINISTRADOR");
 			System.out.println("2 - PACIENTE");
 			System.out.println("3 - PSICÓLOGO");
-			Scanner sc = new Scanner(System.in);
 			System.out.print("DIGITE A OPÇÃO: ");
 			int tipo = sc.nextInt();
 	
@@ -89,8 +91,6 @@ public class Controller {
 				psicologo.cadastrar();
 				this.cadastrarUsuario(psicologo);
 			}
-			
-			sc.close();
 		} else if (op == 2) {
 			// Método para criar consulta
 			consulta.cadastrar();
@@ -99,7 +99,11 @@ public class Controller {
 			// Método para dar avaliação
 			avaliacao.cadastrar();
 			this.cadastrarFormulario(avaliacao);
-		} else {
+		} else if (op == 4) {
+			this.mostrarUsuarios();
+		} else if (op == 5) {
+			this.mostrarFormularios();
+		}else {
 			System.out.println("OPÇÃO INVÁLIDA...");
 		}
 	}

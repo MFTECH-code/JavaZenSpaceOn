@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Avaliacao extends Formulario{
 	private String feedback;
 	private double nota;
+	private Scanner sc = new Scanner(System.in);
 	
 	public Avaliacao(int codigoIdPaciente, int codigoIdPsicologo, String feedback, double nota, int idFormulario) {
 		super();
@@ -38,7 +39,7 @@ public class Avaliacao extends Formulario{
 	
 	@Override
 	public void cadastrar() {
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("DIGITE O CODIGO ID DO PACIENTE: ");
 		this.setCodigoIdPaciente(sc.nextInt());
 		
@@ -52,6 +53,5 @@ public class Avaliacao extends Formulario{
 		System.out.println("-> ");
 		this.setFeedback(sc.next());
 		
-		sc.close();
 	}
 }

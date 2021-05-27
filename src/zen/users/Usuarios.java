@@ -8,6 +8,7 @@ public abstract class Usuarios {
 	protected String senha;
 	protected String email;
 	protected String tipoUsuario;
+	protected Scanner sc = new Scanner(System.in);
 	
 	public int getCodigoId() {
 		return codigoId;
@@ -51,7 +52,7 @@ public abstract class Usuarios {
 	
 	// Método cadastrar usuario
 	public void cadastrar() {
-		Scanner sc = new Scanner(System.in);
+		
 		
 		System.out.print("INFORME O NOME: ");
 		String nome = sc.next();
@@ -64,8 +65,6 @@ public abstract class Usuarios {
 		System.out.print("INFORME O EMAIL: ");
 		String email = sc.next();
 		this.setEmail(email);
-		
-		sc.close();
 	}
 	
 	

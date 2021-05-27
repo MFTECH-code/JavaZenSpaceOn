@@ -9,6 +9,7 @@ public class Consulta extends Formulario {
 	private String desc;
 	private String laudo;
 	private Date data;
+	private Scanner sc = new Scanner(System.in);
 	
 	public Consulta(int codigoIdPaciente, int codigoIdPsicologo, String desc, String laudo, Date data, int idFormulario) {
 		super();
@@ -51,7 +52,7 @@ public class Consulta extends Formulario {
 	
 	@Override
 	public void cadastrar() {
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.print("DIGITE O CODIGO ID DO PACIENTE: ");
 		this.setCodigoIdPaciente(sc.nextInt());
 		
@@ -78,7 +79,6 @@ public class Consulta extends Formulario {
 		this.setLaudo(sc.next());
 		
 		
-		sc.close();
 	}
 	
 	
